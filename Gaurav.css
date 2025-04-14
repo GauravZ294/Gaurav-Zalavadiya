@@ -1,0 +1,636 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  body::-webkit-scrollbar {
+  display: none;                
+  }
+  header {
+    background-color: yellow;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* position: sticky; /* Sticks the navbar */
+    /*top: 0; /* Keeps it at the top of the page */
+    /*z-index: 1000; /* Ensures it's above other content */
+  }
+  header h1 {
+    margin: 0;
+    cursor: pointer;
+  }
+  nav a {
+    margin: 300px 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+
+  .profile-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+  }
+  
+  .profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .profile-icon i {
+    font-size: 18px;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 5px;
+    padding: 10px 0;
+  }
+  
+  .dropdown-menu a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    border: #e0e000;
+    transition: background-color 0.2s ease;
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #333;
+  }
+  
+
+
+  section {
+    padding: 40px 20px;
+  }
+  .home-container,
+  .about-container,
+  .project-container,
+  .skills-container,
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .image-box {
+    flex: 1;
+    padding: 20px;
+  }
+  .image-box img {
+    max-width: 100%;
+    border: 5px solid yellow;
+    border-radius: 10px;
+  }
+  .details-box {
+    flex: 2;
+    padding: 20px;
+  }
+  .social{
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  }
+  .icon1{
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 20px;
+  overflow:hidden;
+  transition: transform 0.5s;
+  }
+  .fa-brands{
+      font-size: 50px;
+  }
+  .icon1>.fa-brands:hover{
+      width:30px;
+  }
+  .fb{
+      position: absolute;
+      width:100%;
+      height:100%;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.5s;
+  }
+  .fb:hover{
+      opacity: 1;
+  }
+  button {
+    background-color: yellow;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color: #e0e000;
+  }
+  .modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: #111;
+    color: white;
+    z-index: 9999;
+    padding: 20px;
+    overflow-y: auto;
+    border: 2px solid yellow;
+    border-radius: 10px;
+  }
+  .modal.fullscreen {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .modal-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .modal-header span {
+    margin-left: 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .highlight {
+    color: yellow;
+  }
+  .project-box {
+    flex: 1 1 100%;
+    margin: 10px;
+    background-color: #222;
+    padding: 20px;
+    border: 1px solid yellow;
+    border-radius: 10px;
+  }
+  .project-box h3:hover {
+    color: yellow;
+    text-decoration: underline;
+  }
+
+  .project {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-description {
+    width: 60%;
+    padding-right: 20px;
+  }
+
+  .project-description h2 {
+    color: white;
+    font-size: 24px;
+  }
+  h2:hover{
+      font-size: 27PX;
+      color:yellow;
+  }
+
+  .project-description p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .project-image {
+    width: 35%;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  @media (max-width: 768px) {
+    .project {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .project-description,
+    .project-image {
+      width: 100%;
+      padding-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+
+  .skill {
+    margin-bottom: 20px;
+  }
+  .slider {
+    width: 100%;
+    background: #333;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .slider-bar {
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    line-height: 20px;
+    font-weight: bold;
+    color: black;
+  }
+  .slider-90 { width: 90%; background: yellow; }
+  .slider-80 { width: 80%; background: orange; }
+  .slider-70 { width: 70%; background: green; }
+  .slider-60 { width: 60%; background: cyan; }
+  .slider-50 { width: 50%; background: red; }
+  form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid yellow;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+  }
+  form textarea {
+    height: 100px;
+  }
+
+.footer {
+  background-color: yellow;
+  color: #333;
+  padding: 10px 20px 20px;
+  position: relative;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin: 20px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: teal;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: none;
+}
+
+.social-icons a {
+  font-size: 24px;
+  color: teal;
+  margin-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #000;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.footer-bottom a {
+  color: teal;
+  text-decoration: underline;
+}
+
+.footer-bottom a:hover {
+  text-decoration: none;
+}
+
+.back-to-top {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+.back-to-top a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.back-to-top a:hover {
+  color: teal;
+}
+
+
+.notification {
+    display: none;
+    padding: 10px;
+    background: green;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+
+  .company-card {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .company-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .company-header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .company-header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .company-content {
+     display: none;
+     padding: 15px;
+     background-color: #ecf0f1;
+   }
+  .company-content img {
+     width: 50%;
+     height: auto;
+     border-radius: 5px;
+     margin-bottom: 10px;
+   }
+   .company-content p {
+     margin: 5px 0;
+     color:black;
+   }
+   .company-content ul{
+    color:black;
+   }
+   .toggle-icon {
+     font-size: 20px;
+   }
+
+   .course-card {
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+  }
+   .course-card:hover {
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+   .course-header {
+      background-color: #34495e;
+      color: #fff;
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+   .course-header a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+  }
+   .course-content {
+      display: none;
+      padding: 15px;
+      background-color: #ecf0f1;
+  }
+      .course-content p {
+          margin: 5px 0;
+          color:black;
+      }
+      .course-content ul{
+        color:black;
+      }
+
+
+  /* Chatbot launcher icon */
+            .chatbot-icon {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: #000;
+                border: 2px solid yellow;
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                z-index: 1000;
+            }
+        
+            .chatbot-icon:hover {
+                background-color: #111;
+            }
+        
+            .chatbot-icon i {
+                font-size: 24px;
+                color: #fff;
+            }
+        
+/* Chat window */
+.chatbot-window {
+     position: fixed;
+     bottom: 90px;
+     right: 20px;
+     width: 400px;
+     height: 600px;
+     background-color: #000;
+     border: 1px solid #333;
+     border-radius: 10px;
+     box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+     display: none;
+     flex-direction: column;
+     overflow: hidden;
+     z-index: 999;
+     color: #fff;
+}
+.chatbot-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+      .chatbot-messages {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+            background: #111;
+          }
+      
+          .chatbot-input-area {
+            display: flex;
+            border-top: 1px solid #444;
+            padding: 10px;
+            background-color: #000;
+          }
+      
+          .chatbot-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #555;
+            border-radius: 20px;
+            outline: none;
+            background-color: #111;
+            color: #fff;
+          }
+      
+          .chatbot-input-area input::placeholder {
+            color: #aaa;
+          }
+      
+          .chatbot-input-area button {
+            background: none;
+            border: none;
+            margin-left: 10px;
+            font-size: 20px;
+            color: #007bff;
+            cursor: pointer;
+          }
+      
+          .chatbot-messages::-webkit-scrollbar {
+            width: 6px;
+          }
+      
+          .chatbot-messages::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 5px;
+          }
+.chatbot-header {
+     background-color: #007bff;
+     color: white;
+     padding: 15px;
+     font-weight: bold;
+     font-size: 16px;
+     display: flex; /* makes title and close button align properly */
+     justify-content: space-between;
+     align-items: center;
+}
+          
+.chatbot-header .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 0 5px;
+ }
+
+.small-screen-message {
+  display: none;
+}
+
+/* For screen width less than 1024px */
+@media screen and (max-width: 1023px) {
+  body {
+    background-color: black;
+    overflow: hidden; /* Prevent scroll */
+    height: 100vh;
+  }
+
+  .site-content {
+    display: none !important;
+  }
+
+  .small-screen-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: yellow;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+}

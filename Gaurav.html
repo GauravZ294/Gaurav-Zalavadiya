@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="./Gaurav.css">
+  <title>Gaurav Zalavadiya</title>
+</head>
+<body>
+
+<div class="small-screen-message">
+  <p>⚠️ You need higher resolution for viewing this website…<br>Use desktop view</p>
+</div>
+
+
+<header>
+  <h1 onclick="navigate('home')">GAURAV</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="blog.html">Blog</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+ <!-- Profile Icon with Dropdown -->
+ <div class="profile-dropdown">
+   <div class="profile-icon" onclick="toggleProfileDropdown()">
+      <i class="fas fa-user"></i>
+   </div>
+   <div class="dropdown-menu" id="profileMenu">
+     <a href="#" onclick="openFlyover('experience')">Experience</a>
+     <a href="#" onclick="openFlyover('education')">Education</a>
+     <a href="resource.html">Resource</a>
+     <a href="blog.html">Blog</a>
+   </div>
+</div>
+
+</header>
+
+<!-- Home -->
+<section id="home">
+  <div class="home-container">
+    <div class="image-box">
+      <img src="../MY WEB/IMG/Profile.png" alt="Profile Image"/>
+    </div>
+    <div class="details-box">
+      <h2>I M' GAURAV ZALAVADIYA</h2>
+      <p>I'm entering the world of computers with the goal of bringing something new and meaningful. I believe I can achieve this with your support. Let's create something impactful together!</p>
+      <div class="social">
+        <div class="icon1">
+            <a class="fb" href="https://www.facebook.com/gaurav.zalavadiya.58?mibextid=ZbWKwL"><i class="fa-brands fa-facebook" style="color: #2012e2;"></i></a>
+        </div>
+        <div class="icon1">
+            <a class="fb" href="https://www.instagram.com/power__boy__gaurav?igsh=MWN2bWhrano4NXdrbA=="><i class="fa-brands fa-instagram" style="color: #fd3063;"></i></a>
+        </div>
+        <div class="icon1">
+            <a class="fb" href="https://www.linkedin.com/in/gaurav-zalavadiya-87a407234?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-brands fa-linkedin-in" style="font-size:40px;"></i></a>
+        </div>
+        <div class="icon1">
+            <a class="fb" href="#"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>  
+      <button type="button"><a class="download" href="../Gaurav_Res.pdf" download>Download CV <i class="fas fa-download"></i></a></button>
+    </div>
+  </div>
+</section>
+<!-- Home Section End-->
+
+<!-- About -->
+<section id="about">
+    <h2>About Me</h2>
+  <div class="about-container">
+    <div class="details-box">
+      <h1>Mistke will make you perfect</h1>
+      <p>👋 Hi, I’m <strong>Gaurav</strong>, a detail-oriented <strong>Manual QA Tester</strong> with <strong> 1 </strong> years of experience in ensuring software quality through meticulous testing and attention to detail.</p>
+        <p>I specialize in identifying bugs, validating software functionality, and ensuring a seamless user experience. My approach focuses on thorough test planning, execution, and reporting to help deliver high-quality products.</p>
+        <h3>🔍 What I Do:</h3>
+        <ul>
+            <li>Design and execute comprehensive test cases based on requirements.</li>
+            <li>Perform functional, regression, exploratory, and usability testing.</li>
+            <li>Identify, document, and track defects using tools like <strong>Selenium</strong> and <strong>Jira</strong>.</li>
+        </ul>
+      <button onclick="showModal('aboutModal')">Education Details</button>
+    </div>
+    <div class="image-box">
+        <img src="../MY WEB/IMG/PhotoRoom-20240226_213718.png" alt="About Image"/>
+      </div>
+  </div>
+</section>
+
+<!-- Modal for About -->
+<div class="modal" id="aboutModal">
+  <div class="modal-header">
+    <span onclick="toggleFullscreen(this)">⛶</span>
+    <span onclick="hideModal('aboutModal')">✖</span>
+  </div>
+  <h3 class="highlight">Education</h3>
+  
+  <!-- Course 1 -->
+  <div class="course-card">
+    <div class="course-header" onclick="toggleContent(this)">
+        <span><a>Master of Science in Information Technology (MSc.IT)</a></span>
+        <span class="toggle-icon">➤</span>
+    </div>
+    <div class="course-content">
+        <p><strong>College:</strong> SMMPISR</p>
+        <p><strong>Website:</strong> <a href="https://ksv.ac.in/" target="blank">Kadi Sarva Vishwavidyalaya</a></p>
+        <p><strong>Passing Year:</strong> 2024</p>
+        <p><strong>CGPA:</strong> /10</p>
+    </div>
+  </div>
+
+  <!-- Course 2 -->
+  <div class="course-card">
+    <div class="course-header" onclick="toggleContent(this)">
+        <span><a>Bachelor of Computer Application (BCA)</a></span>
+        <span class="toggle-icon">➤</span>
+    </div>
+    <div class="course-content">
+        <p><strong>College:</strong> Example Polytechnic Institute</p>
+        <p><strong>Website:</strong> <a href="https://www.college2.edu" target="_blank">www.college2.edu</a></p>
+        <p><strong>Passing Year:</strong> 2020</p>
+        <p><strong>CGPA:</strong> 9.0/10</p>
+    </div>
+  </div>
+
+  <!-- Course 3 -->
+  <div class="course-card">
+    <div class="course-header" onclick="toggleContent(this)">
+        <span><a>High School Cource (HSC-12th)</a></span>
+        <span class="toggle-icon">➤</span>
+    </div>
+    <div class="course-content">
+        <p><strong>School:</strong> Example High School</p>
+        <p><strong>Website:</strong> <a href="https://www.school3.edu" target="_blank">www.school3.edu</a></p>
+        <p><strong>Passing Year:</strong> 2018</p>
+        <p><strong>CGPA:</strong> 9.5/10</p>
+    </div>
+  </div>
+
+  <!-- Course 4 -->
+  <div class="course-card">
+    <div class="course-header" onclick="toggleContent(this)">
+        <span><a>Secondary Scool Course (SSC-10th)</a></span>
+        <span class="toggle-icon">➤</span>
+    </div>
+    <div class="course-content">
+        <p><strong>College:</strong> Example University</p>
+        <p><strong>Website:</strong> <a href="https://www.university4.edu" target="_blank">www.university4.edu</a></p>
+        <p><strong>Passing Year:</strong> 2024</p>
+        <p><strong>CGPA:</strong> 8.9/10</p>
+    </div>
+  </div>
+  <h3 class="highlight">Certifications</h3>
+  <div class="course-card">
+    <div class="course-header" onclick="toggleContent(this)">
+        <span><a>Mahatma Gandhi Computer Saksharta Mission (MGCSM)</a></span>
+        <span class="toggle-icon">➤</span>
+    </div>
+    <div class="course-content">
+        <p><strong>College:</strong> Example University</p>
+        <p><strong>Website:</strong> <a href="https://www.university4.edu" target="_blank">www.university4.edu</a></p>
+        <p><strong>Passing Year:</strong> 2024</p>
+        <p><strong>CGPA:</strong> 8.9/10</p>
+    </div>
+  </div>
+</div>
+</div>
+<!-- About Section end-->
+
+<!-- Projects -->
+<section id="projects">
+<h2>Projects</h2>
+  <div class="project-container">
+    <div class="project-box">
+        <div class="project">
+            <div class="project-description">
+              <div class="in-detail">
+                <!--<p><span class="tag">Project Title: Web Development</span></p> -->
+                <h2>Vaccination Center System</h2>
+                <p class="tech">Technology : ASP.Net, HTML, CSS</p>
+                <p class="db">Database : SQL Server</p>
+                <p>There are 3 modules in Vaccination Center System</p>
+                <p>- In VCS users can book vaccines, and choose nearest center for take vaccine, and also download certificate.</p>
+                <p>- Staff can see vaccins and update his/her profile and appoint vaccine.</p>
+                <p>- Admin can allocate vaccines, see available vaccines, and manage staffs and users Profile. </p>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="./IMG/WhatsApp Image 2025-04-05 at 15.15.29.jpeg" alt="Project 1 Image">
+            </div>
+        </div>
+
+    </div>
+    <div class="project-box">
+
+        <div class="project">
+            <div class="project-description">
+              <div class="in-detail">
+                <h2>Online Backup System</h2>
+                <!-- <p><span class="tag">Project Title: Mobile App</span></p> -->
+                <p class="tech">Technology : ASP.Net, HTML, CSS</p>
+                <p class="db">Database : MSSQL</p>
+                <p>There are only 1 modules in Online Backup System</p>
+                <p>- In VCS users can book vaccines, and choose nearest center for take vaccine, and also download certificate.</p>
+                <p>- Staff can see vaccins and update his/her profile and appoint vaccine.</p>
+               <p>- Admin can allocate vaccines, see available vaccines, and manage staffs and users Profile. </p>
+              </div>
+            </div>
+            <div class="project-image">
+              <img src="./IMG/index.png" alt="Project 2 Image">
+            </div>
+        </div>
+
+    </div>
+    <div class="project-box">
+
+        <div class="project">
+          <div class="project-description">
+             <h2>Shopper Stack</h2>
+              <p>In this project, I created an e-commerce platform that allows users to browse products, make purchases, and track orders. The website integrates with a payment gateway for secure transactions.</p>
+            <div class="in-detail">
+             <p><span class="tag">Project Title: E-Commerce Website</span></p>
+             <p class="tech">Technologies: HTML, CSS, JavaScript, Node.js, Express</p>
+             <p class="db">Database: MySQL</p>
+            </div>
+          </div>
+          <div class="project-image">
+            <img src="./IMG/Shopper.png" alt="Project 3 Image">
+          </div>
+        </div>
+
+    </div>
+  </div>
+</section>
+<!-- Project section End-->
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-container">
+    <div class="details-box">
+      <div class="skill"><p>Manual Testing</p><div class="slider"><div class="slider-bar slider-90">90%</div></div></div>
+      <div class="skill"><p>Automation Testing</p><div class="slider"><div class="slider-bar slider-80">80%</div></div></div>
+      <div class="skill"><p>Selenium</p><div class="slider"><div class="slider-bar slider-70">70%</div></div></div>
+      <div class="skill"><p>JIRA</p><div class="slider"><div class="slider-bar slider-60">60%</div></div></div>
+      <div class="skill"><p>SQL</p><div class="slider"><div class="slider-bar slider-50">50%</div></div></div>
+      <button onclick="showModal('skillModal')">Experience Details</button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Skills -->
+<div class="modal" id="skillModal">
+  <div class="modal-header">
+    <span onclick="toggleFullscreen(this)">⛶</span>
+    <span onclick="hideModal('skillModal')">✖</span>
+  </div>
+  <h3 class="highlight">Experience</h3>
+    <div class="company-card">
+      <div class="company-header" onclick="toggleContent(this)">
+        <span><a href="https://qspiders.com/" target="blank">QSpider</a></span>
+        <span class="toggle-icon">➤</span>
+      </div>
+      <div class="company-content">
+        <img src="./IMG/qspiders_logo.jfif" alt="Company 1 Logo">
+        <p><strong>Role:</strong> QA Analyst</p>
+        <p><strong>Joining Year:</strong> 2020</p>
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+            <li>Developed and executed manual test cases.</li>
+            <li>Performed regression and exploratory testing.</li>
+            <li>Reported bugs and collaborated with the development team.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="company-card">
+      <div class="company-header" onclick="toggleContent(this)">
+          <span><a href="https://itechforest.com/" target="blank">Itech Forest</a></span>
+          <span class="toggle-icon">➤</span>
+      </div>
+      <div class="company-content">
+          <img src=".//IMG/3926853.png" alt="Company 2 Logo">
+          <p><strong>Role:</strong> Senior QA Tester</p>
+          <p><strong>Joining Year:</strong> 2018</p>
+          <p><strong>Responsibilities:</strong></p>
+          <ul>
+              <li>Led a team of junior testers.</li>
+              <li>Reviewed test plans and improved testing processes.</li>
+              <li>Conducted performance and security testing.</li>
+          </ul>
+      </div>
+  </div>
+</div>
+</div>
+<!-- Skill Section end-->
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form onsubmit="submitForm(event)">
+    <input type="text" placeholder="Name" required />
+    <input type="email" placeholder="Email" required />
+    <input type="tel" placeholder="Phone Number" required />
+    <textarea placeholder="Message" required></textarea>
+    <button type="submit">Submit</button>
+    <div class="notification" id="notification">Submission Successful!</div>
+  </form>
+</section>
+<!--Contact section end-->
+
+
+  <!-- Chatbot Icon -->
+  <div class="chatbot-icon" onclick="toggleChatbot()">
+    <i class="fas fa-headset"></i>
+  </div>
+
+  <!-- Chatbot Window -->
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <span>Need any help?</span>
+      <button class="close-btn" onclick="closeChatbot()">×</button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+      <!-- Chat messages go here -->
+    </div>
+    <div class="chatbot-input-area">
+      <input type="text" id="chatInput" placeholder="Type your message..." />
+      <button onclick="sendMessage()">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h3>Pages</h3>
+        <ul>
+          <li><a href="#home">Home Page</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="blog.html">Blog</a></li>
+         <!-- <li><a href="#">Resources</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-column">
+      </div>
+      <div class="footer-column">
+        <h3>Social Media</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>Copyright © All rights reserved.
+        <a href="#">Gaurav Zalavadiya</a>
+      </p>
+    </div>
+
+    <div class="back-to-top">
+      <a href="#"><i class="fas fa-chevron-up"></i></a>
+    </div>
+  </footer>
+
+
+<script>
+  function showModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function hideModal(id) {
+    document.getElementById(id).classList.remove("fullscreen");
+    document.getElementById(id).style.display = "none";
+  }
+  function toggleFullscreen(elem) {
+    const modal = elem.closest('.modal');
+    modal.classList.toggle("fullscreen");
+  }
+  function downloadCV() {
+    alert("Downloading CV...");
+    window.open("https://example.com/cv.pdf", "_blank");
+  }
+  function submitForm(event) {
+    event.preventDefault();
+    document.getElementById("notification").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("notification").style.display = "none";
+    }, 3000);
+  }
+</script>
+
+<script>
+  function toggleContent(element) {
+      const content = element.nextElementSibling;
+      const icon = element.querySelector('.toggle-icon');
+
+      if (content.style.display === "block") {
+          content.style.display = "none";
+          icon.textContent = "➤";
+      } else {
+          content.style.display = "block";
+          icon.textContent = "➤";
+      }
+  }
+</script>
+
+<script>
+  const chatbotWindow = document.getElementById('chatbotWindow');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatInput = document.getElementById('chatInput');
+
+  function toggleChatbot() {
+    chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+  }
+
+  function closeChatbot() {
+      chatbotWindow.style.display = 'none';
+    }
+
+  function sendMessage() {
+    const msg = chatInput.value.trim();
+    if (msg !== '') {
+      const userMsg = document.createElement('div');
+      userMsg.textContent = msg;
+      userMsg.style.margin = '8px 0';
+      userMsg.style.alignSelf = 'flex-end';
+      userMsg.style.color = '#fff';
+      userMsg.style.padding = '8px 12px';
+      userMsg.style.borderRadius = '15px';
+      userMsg.style.maxWidth = '80%';
+      userMsg.style.textAlign = 'right';
+
+      chatMessages.appendChild(userMsg);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+      chatInput.value = '';
+    }
+  }
+
+  chatInput.addEventListener('keypress', function(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  });
+
+  function toggleProfileDropdown() {
+    const menu = document.getElementById("profileMenu");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Close the dropdown if clicking outside
+  window.onclick = function(event) {
+    if (!event.target.closest('.profile-dropdown')) {
+      document.getElementById("profileMenu").style.display = "none";
+    }
+  }
+
+  function openFlyover(section) {
+    document.getElementById("profileMenu").style.display = "none";
+
+    if (section === 'experience') {
+      document.getElementById("skillModal").classList.add("show");
+    } else if (section === 'education') {
+      document.getElementById("aboutModal").classList.add("show");
+    }
+  }
+
+</script>
+
+</body>
+</html>
