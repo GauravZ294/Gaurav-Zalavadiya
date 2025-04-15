@@ -604,15 +604,17 @@ body {
   display: none;
 }
 
-/* For screen width less than 1024px */
-@media screen and (max-width: 1023px) {
-  body {
-    background-color: black;
-    overflow: hidden; /* Prevent scroll */
-    height: 100vh;
+/* Hide the message & show website content if screen is 768px or more */
+@media (min-width: 768px) {
+  .small-screen-message {
+    display: none;
   }
+}
 
-  .site-content {
+/* Show only the warning message if screen width < 768px */
+@media (max-width: 767px) {
+  /* Hide everything except the message */
+  body > *:not(.small-screen-message) {
     display: none !important;
   }
 
@@ -621,16 +623,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: yellow;
-    font-size: 22px;
-    font-weight: bold;
+    font-size: 1.5rem;
     text-align: center;
     padding: 20px;
-    background-color: black;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
+    background-color: #fff;
+    color: #d00000;
+    font-family: sans-serif;
   }
 }
