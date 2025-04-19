@@ -387,14 +387,14 @@
     const modal = elem.closest('.modal');
     modal.classList.toggle("fullscreen");
   }
-  function downloadCV() {
+  
   const link = document.createElement('a');
   link.href = './Gaurav Zalavadiya .pdf';
   link.download = './Gaurav Zalavadiya .pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-}
+
   function submitForm(event) {
     event.preventDefault();
     document.getElementById("notification").style.display = "block";
