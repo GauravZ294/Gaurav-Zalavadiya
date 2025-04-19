@@ -100,8 +100,7 @@
   }
 
 // Inspect prevent script code 
-
- /* window.addEventListener("contextmenu", function (e) {
+window.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   });
 
@@ -133,8 +132,5 @@
       e.preventDefault();
       document.body.innerHTML = ""; // Blank the page
     }
-  }); */
-  
-
-
+  });
   
