@@ -389,28 +389,18 @@ body {
 .back-to-top a:hover {
   color: teal;
 }
-
-
-.notification {
-    display: none;
-    padding: 10px;
-    background: green;
-    color: white;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-
-  .company-card {
+  
+.company-card {
     border: 1px solid #ddd;
     margin-bottom: 15px;
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.3s ease;
-  }
-  .company-card:hover {
+}
+.company-card:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  .company-header {
+}
+.company-header {
     background-color: #2c3e50;
     color: #fff;
     padding: 15px;
@@ -418,7 +408,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+}
   .company-header a {
     color: #fff;
     text-decoration: none;
@@ -604,6 +594,24 @@ body {
   display: none;
 }
 
+.download-report-btn {
+  display: inline-block;
+  background-color: yellow; /* Yellow */
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.download-report-btn:hover {
+  background-color:  #e0e000;
+}
+ 
+
+
 /* Hide the message & show website content if screen is 768px or more */
 @media (min-width: 768px) {
   .small-screen-message {
@@ -616,6 +624,7 @@ body {
   /* Hide everything except the message */
   body > *:not(.small-screen-message) {
     display: none !important;
+    background: #000;
   }
 
   .small-screen-message {
@@ -626,8 +635,8 @@ body {
     font-size: 1.5rem;
     text-align: center;
     padding: 20px;
-    background-color: #fff;
-    color: #d00000;
+    background-color: black;
+    color: yellow;
     font-family: sans-serif;
   }
 }
