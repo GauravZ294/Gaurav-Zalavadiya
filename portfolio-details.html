@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Gaurav Zalavadiya</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Splash & Animation CSS -->
+  <link href="assets/css/splash.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page" oncontextmenu="return false;">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/Gemini_Generated_Image_dnktx2dnktx2dnkt.png" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Gaurav Zalavadiya</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://www.facebook.com/gaurav.zalavadiya.58?mibextid=ZbWKwL" class="facebook"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/power__boy__gaurav?igsh=MWN2bWhrano4NXdrbA==" class="instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/gaurav-zalavadiya-87a407234" class="linkedin"><i class="bi bi-linkedin"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i> About</a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Profession</a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i> Project</a></li>
+        <li><a href="index.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+        <li><a href="blogs.html"><i class="bi bi-journal-text navicon"></i> Blogs</a></li>
+        <li><a href="index.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <button class="desktop-sidebar-toggle" type="button" aria-controls="header" aria-expanded="true" aria-label="Collapse sidebar">
+    <i class="bi bi-list" aria-hidden="true"></i>
+  </button>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0" id="project-title">Project Details</h1>
+        <div class="page-title-actions">
+          <nav class="breadcrumbs">
+            <ol>
+              <li><a href="index.html">Home</a></li>
+              <li class="current" id="project-breadcrumbs">Project Details</li>
+            </ol>
+          </nav>
+          <button id="theme-toggle" class="theme-toggle theme-toggle-inline" type="button" aria-label="Switch theme">
+            <i class="bi bi-moon-stars" aria-hidden="true"></i>
+            <span>Dark Mode</span>
+          </button>
+        </div>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+
+            <div class="portfolio-details-slider swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": { "delay": 5000 },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center" id="project-images"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3 id="project-title">Project Details</h3>
+              <ul>
+                <li><strong>Category</strong>: <span id="project-category"></span></li>
+                <li><strong>Technology</strong>: <span id="project-client"></span></li>
+                <li><strong>Date</strong>: <span id="project-date"></span></li>
+                <!--<li><strong></strong><a href="#" id="project-url" target="_blank"></a></li>-->
+              </ul>
+            
+              <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+                <h2 id="project-heading"></h2>
+                <p id="project-description"></p>
+                <a id="project-download" download class="btn btn-primary">Project Document</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Gaurav Zalavadiya</h3>
+          <p>Senior Quality Assurance Engineer &amp; Automation Tester.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Skills</a>
+          <a href="index.html#portfolio">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <a href="mailto:gauravzalavadiya888@gmail.com">gauravzalavadiya888@gmail.com</a>
+          <a href="tel:+918849485558">+91 8849485558</a>
+        </div>
+      </div>
+
+      <div class="copyright text-center">
+        <p>&copy; 2026 Gaurav Zalavadiya</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Page Particles Layer -->
+  <div id="page-particles"></div>
+
+  <!-- GZ Splash Screen -->
+  <div id="gz-splash">
+    <canvas id="gz-canvas"></canvas>
+    <div class="gz-center">
+      <div class="gz-ring gz-ring-2"></div>
+      <div class="gz-ring"></div>
+      <div class="gz-letters">
+        <span class="gz-letter">G</span>
+        <span class="gz-letter">Z</span>
+      </div>
+      <div class="gz-tagline">Gaurav Zalavadiya</div>
+      <div class="gz-loader-bar"><div class="gz-loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Splash & Animation JS -->
+  <script src="assets/js/splash.js"></script>
+
+
+  <script>
+    const projects = {
+      1: {
+        title: "Vaccination Management System",
+        client: "ASP.Net, .Net MVC, HTML, CSS",
+        category: "Web",
+        date: "March 2022",
+        //url: "https://example.com/vaccine",
+        report: "assets/Report/vaccine.pdf",
+        heading: "Vaccination Management System",
+        description: `
+        <p>There are 3 User modules in Vaccination Management System:</p>
+        <ul>
+          <li><strong>Users</strong>: In VCS, users can book vaccines, choose the nearest center to take the vaccine, and also download their vaccination certificate.</li>
+          <li><strong>Staff</strong>: Staff members can view available vaccines, update their profiles, and manage vaccine appointments.</li>
+          <li><strong>Admin</strong>: Admins can allocate vaccines, monitor available stock, and manage staff and user profiles. 
+          They also have visibility into vaccine stock branch-wise, city-wise, and state-wise across India.</li>
+        </ul>
+        <p>This system ensures complete management of vaccines across branches, cities, and states in India.</p>
+        `,
+        images: [
+          "assets/img/portfolio/vcs.jpeg",
+          "assets/img/portfolio/vcs 1.jpeg",
+          "assets/img/portfolio/vcs 2.jpeg",
+          "assets/img/portfolio/vcs 3.jpeg",
+          "assets/img/portfolio/vcs 4.jpeg",
+          "assets/img/portfolio/vcs 5.jpeg"
+        ]
+      },
+      2: {
+        title: "Online Backup System",
+        client:"ASP.Net, HTML, CSS",
+        category: "Web",
+        date: "Oct 2023",
+        //url: "https://example.com/backup",
+        report: "assets/Report/Online Backup System.pdf",
+        heading: "Online Backup System",
+        description: `
+        <p>The Online Backup System provides services similar to Google Drive, allowing users to securely upload, manage, and download files.</p>
+        <ul>
+          <li><strong>Single User Role:</strong> The system is designed for a single role — the <em>User</em>.</li>
+          <li><strong>File Upload:</strong> Users can upload multiple file types such as MP3, MP4, images, documents, PDFs, and more.</li>
+          <li><strong>Folder Management:</strong> Users can create folders to organize their uploaded files efficiently.</li>
+          <li><strong>File Download:</strong> The system allows downloading of all uploaded files as a <em>ZIP</em> file, which can be extracted to restore the original files.</li>
+          <li><strong>Storage Limit:</strong> 
+            <ul>
+              <li>Free users are provided with <strong>1 GB of storage</strong>.</li>
+              <li>Premium users can purchase additional storage by upgrading their package.</li>
+            </ul>
+          </li>
+          <li><strong>Key Feature:</strong> Easy backup and restoration process for all uploaded files.</li>
+        </ul>
+        `,
+        images: [
+          "assets/img/portfolio/obs.png",
+          "assets/img/portfolio/obs 1.jpeg",
+          "assets/img/portfolio/obs 2.jpeg"
+        ]
+      },
+      3: {
+        title: "Shopper Stack",
+        client:"HTML, CSS, JavaScript",
+        category: "Web",
+        date: "Mar 2024",
+        //url: "https://example.com/shopper",
+        report: "assets/reports/Shopper stack.pdf",
+        heading: "Shooper Stack",
+        description: `
+        <p>Shopper Stack is an e-commerce platform similar to Amazon and Flipkart, supporting both customers and sellers.</p>
+        <ul>
+          <li><strong>User Roles:</strong>
+            <ul>
+              <li><strong>Customer:</strong> Can browse and purchase a wide variety of products.</li>
+              <li><strong>Seller:</strong> Can upload and manage product listings.</li>
+            </ul>
+          </li>
+          <li><strong>Tester Role:</strong> I contributed as a tester for this project, not as a developer.</li>
+          <li><strong>Testing Performed:</strong>
+            <ul>
+              <li>Manual testing for <em>UI</em>, <em>functionality</em>, and <em>performance</em>.</li>
+              <li>Created automation scripts for the main workflows of the platform.</li>
+            </ul>
+          </li>
+        </ul>
+        `,
+        images: [
+          "assets/img/portfolio/Shopper.png",
+          "assets/img/portfolio/LOGIN.png",
+          "assets/img/portfolio/Information.png"
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const projectId = params.get("id");
+
+    if (projectId && projects[projectId]) {
+      const project = projects[projectId];
+
+      document.getElementById("project-title").textContent = project.title;
+      document.getElementById("project-category").textContent = project.category;
+      document.getElementById("project-client").textContent = project.client;
+      document.getElementById("project-date").textContent = project.date;
+      //document.getElementById("project-url").textContent = project.url;
+      //document.getElementById("project-url").href = project.url;
+      document.getElementById("project-heading").textContent = project.heading;
+      document.getElementById("project-description").innerHTML = project.description;
+      document.getElementById("project-breadcrumbs").textContent = project.title;
+
+      // ✅ Handle report download inside the block
+      const downloadBtn = document.getElementById("project-download");
+      if (project.report) {
+        downloadBtn.href = project.report;
+        downloadBtn.setAttribute("download", ""); // ensures download
+        downloadBtn.style.display = "inline-block";
+      } else {
+        downloadBtn.style.display = "none";
+      }
+
+      // Inject images into Swiper slider
+      const imageContainer = document.getElementById("project-images");
+      project.images.forEach(img => {
+        const slide = document.createElement("div");
+        slide.className = "swiper-slide";
+        slide.innerHTML = `<img src="${img}" alt="">`;
+        imageContainer.appendChild(slide);
+      });
+    } else {
+      document.getElementById("project-title").textContent = "Project Not Found";
+      document.getElementById("project-description").textContent = "Sorry, this project does not exist.";
+      document.getElementById("project-download").style.display = "none";
+    }
+  </script>
+</body>
+</html>
