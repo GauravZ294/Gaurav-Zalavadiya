@@ -18,6 +18,7 @@
     document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    headerToggleBtn.setAttribute('aria-expanded', String(document.querySelector('#header').classList.contains('header-show')));
     document.body.classList.toggle('mobile-nav-open');
   }
   if (headerToggleBtn) {
@@ -73,7 +74,7 @@
     const section = document.querySelector(hash);
     if (!section) return null;
     const scrollMarginTop = parseInt(getComputedStyle(section).scrollMarginTop || 0, 10);
-    return section.offsetTop - scrollMarginTop;
+    return section.getBoundingClientRect().top + window.scrollY - scrollMarginTop - 100;
   };
 
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -83,9 +84,14 @@
       const targetTop = getScrollTargetPosition(hash);
       if (targetTop === null) return;
       e.preventDefault();
+      if (anchor.classList.contains('skip-link')) {
+        const target = document.querySelector(hash);
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }
       window.scrollTo({
         top: targetTop,
-        behavior: 'smooth'
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
       });
     });
   });
@@ -121,7 +127,7 @@
       e.preventDefault();
       window.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
       });
     });
   }
@@ -129,48 +135,17 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
-   * Theme toggle (dark/light)
-   */
-  const themeToggleBtn = document.querySelector('#theme-toggle');
-
-  function applyTheme(theme) {
-    const mode = theme === 'dark' ? 'dark' : 'light';
-    document.body.classList.remove('theme-light', 'theme-dark');
-    document.body.classList.add(`theme-${mode}`);
-    document.body.setAttribute('data-theme', mode);
-
-    if (themeToggleBtn) {
-      const icon = themeToggleBtn.querySelector('i');
-      const label = themeToggleBtn.querySelector('span');
-      if (mode === 'dark') {
-        if (icon) icon.className = 'bi bi-sun';
-        if (label) label.textContent = 'Light Mode';
-        themeToggleBtn.setAttribute('aria-label', 'Switch to light mode');
-      } else {
-        if (icon) icon.className = 'bi bi-moon-stars';
-        if (label) label.textContent = 'Dark Mode';
-        themeToggleBtn.setAttribute('aria-label', 'Switch to dark mode');
-      }
-    }
-  }
-
-  const storedTheme = localStorage.getItem('preferred-theme');
-  applyTheme(storedTheme || 'light');
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener('click', () => {
-      const isDark = document.body.classList.contains('theme-dark');
-      const nextTheme = isDark ? 'light' : 'dark';
-      applyTheme(nextTheme);
-      localStorage.setItem('preferred-theme', nextTheme);
-    });
-  }
+  // The portfolio is intentionally dark-only, independent of old preferences.
+  document.body.classList.remove('theme-light');
+  document.body.classList.add('theme-dark');
+  document.body.setAttribute('data-theme', 'dark');
+  document.documentElement.style.colorScheme = 'dark';
 
   /**
    * Animation on scroll function and init
    */
   function aosInit() {
+    if (typeof AOS === 'undefined') return;
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -179,39 +154,6 @@
     });
   }
   window.addEventListener('load', aosInit);
-
-  /**
-   * Reveal animations with staggered delays
-   */
-  function initRevealOnScroll() {
-    const revealTargets = document.querySelectorAll([
-      '.section-title',
-      '.stats .stats-item',
-      '.resume .resume-item',
-      '.services .service-item',
-      '.contact .info-item',
-      '.portfolio .portfolio-item'
-    ].join(','));
-
-    revealTargets.forEach((el, index) => {
-      el.classList.add('reveal-on-scroll');
-      const isPortfolioItem = el.classList.contains('portfolio-item');
-      const delayStep = isPortfolioItem ? 70 : 40;
-      const maxDelay = isPortfolioItem ? 320 : 200;
-      el.style.transitionDelay = `${Math.min(index * delayStep, maxDelay)}ms`;
-    });
-
-    const observer = new IntersectionObserver((entries, revealObserver) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('in-view');
-        revealObserver.unobserve(entry.target);
-      });
-    }, { threshold: 0.2 });
-
-    revealTargets.forEach((el) => observer.observe(el));
-  }
-  window.addEventListener('load', initRevealOnScroll);
 
   /**
    * Init typed.js
@@ -232,7 +174,7 @@
   /**
    * Initiate Pure Counter
    */
-  new PureCounter();
+  if (typeof PureCounter !== 'undefined') new PureCounter();
 
   /**
    * Animate the skills items on reveal
@@ -257,9 +199,7 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
-    selector: '.glightbox'
-  });
+  if (typeof GLightbox !== 'undefined') GLightbox({ selector: '.glightbox' });
 
   /**
    * Init isotope layout and filters
@@ -303,6 +243,19 @@
         swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
+      const slideCount = swiperElement.querySelectorAll('.swiper-wrapper > .swiper-slide').length;
+      if (!slideCount || typeof Swiper === 'undefined') return;
+      config.loop = Boolean(config.loop) && slideCount > 1;
+      config.watchOverflow = true;
+      if (slideCount === 1) {
+        config.autoplay = false;
+        config.allowTouchMove = false;
+      }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        config.autoplay = false;
+        config.speed = 0;
+      }
+
       if (swiperElement.classList.contains("swiper-tab")) {
         initSwiperWithCustomPagination(swiperElement, config);
       } else {
@@ -324,7 +277,7 @@
           if (targetTop === null) return;
           window.scrollTo({
             top: targetTop,
-            behavior: 'smooth'
+            behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
           });
         }, 100);
       }

@@ -2008,3 +2008,11 @@ body.theme-dark .personal-blog-content {
     padding-left: 18px;
   }
 }
+/* Keep existing project actions usable with keyboard and touch input. */
+.portfolio .portfolio-content:focus-within .portfolio-info,
+.portfolio .portfolio-content:focus-within .portfolio-info p { opacity: 1; transform: none; }
+.portfolio .portfolio-content .portfolio-info a:focus-visible { outline: 2px solid #fff; outline-offset: 6px; }
+@media (hover: none) {
+  .portfolio .portfolio-content .portfolio-info { opacity: 1; background: linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.7)); }
+  .portfolio .portfolio-content .portfolio-info p { opacity: 1; transform: none; font-size: 14px; }
+}

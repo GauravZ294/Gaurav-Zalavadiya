@@ -22,3 +22,7 @@ Thumbs.db
 # Build artifacts
 dist/
 build/
+
+# Local preview and responsive QA artifacts
+qa/
+*-preview.jpg

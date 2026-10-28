@@ -28,10 +28,15 @@
         return;
       }
 
-      // This template points to a PHP endpoint not available on GitHub Pages.
-      // If the form is valid, show a success message without backend submission.
+      // Static hosting has no PHP mail endpoint: open an honest email draft.
       if (isStaticContactPhp) {
-        displaySuccess(thisForm);
+        const fields = new FormData(thisForm);
+        const subject = String(fields.get('subject') || 'Portfolio enquiry');
+        const body = 'Name: ' + String(fields.get('name') || '') + '\nEmail: ' + String(fields.get('email') || '') + '\n\n' + String(fields.get('message') || '');
+        window.location.href = 'mailto:gauravzalavadiya123@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        thisForm.querySelector('.error-message').classList.remove('d-block');
+        thisForm.querySelector('.sent-message').textContent = 'Continue in your email app to send your message. If no app opens, email gauravzalavadiya123@gmail.com directly.';
+        thisForm.querySelector('.sent-message').classList.add('d-block');
         return;
       }
 
