@@ -1,0 +1,10 @@
+/* One quick diagonal bound, clipped to the hero, with no hit targets. */
+#hero .roo-stage{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:4;contain:layout paint;--roo-size:clamp(145px,15vw,215px);--roo-start:clamp(160px,calc(100svh - 155px),850px);--roo-end:clamp(100px,17svh,175px);--roo-lift:-35px}
+.roo-traveller{position:absolute;left:0;top:0;width:var(--roo-size);animation:roo-cross 2.5s linear both;will-change:transform}
+.roo-hop{animation:roo-bound .5s ease-in-out 5 both;transform-origin:65% 65%}
+#hero .roo-stage .roo-art{position:static;inset:auto;z-index:auto;object-fit:contain;display:block;width:100%;height:auto;filter:drop-shadow(0 4px 5px #0005);user-select:none}
+@keyframes roo-cross{from{transform:translate3d(calc(-1 * var(--roo-size)),var(--roo-start),0)}to{transform:translate3d(calc(100vw + 20px),var(--roo-end),0)}}
+@keyframes roo-bound{0%,100%{transform:translateY(0) rotate(1deg)}45%,55%{transform:translateY(var(--roo-lift)) rotate(-8deg)}}
+@media(max-width:767px){#hero .roo-stage{--roo-size:clamp(115px,27vw,155px);--roo-start:clamp(160px,calc(100svh - 145px),850px);--roo-end:105px;--roo-lift:-24px}}
+@media(max-height:450px){#hero .roo-stage{--roo-size:115px;--roo-start:calc(100svh - 100px);--roo-end:90px;--roo-lift:-15px}}
+@media(prefers-reduced-motion:reduce){.roo-stage{display:none}.roo-traveller,.roo-hop{animation:none}}
