@@ -37,3 +37,7 @@ The contact form opens a draft in the visitor's email app. It does not send mess
 Serve this directory with a static HTTP server. No package installation or build is required. The included vercel.json publishes the directory as a static site; choose the Other framework preset.
 
 Existing homepage bookmarks such as /#portfolio redirect to the corresponding dedicated page.
+
+## Site mark and loading intro
+
+The shared GZ favicon is available as SVG, PNG, ICO, and an Apple touch icon. Every page loads the matching vector intro early in the body. It plays on the first visit and explicit reload, and skips subsequent internal navigation. The fill bar completes before dismissal; Skip, Escape, Tab, reduced-motion preferences, and a timeout keep the page accessible. Use `?splash=preview` to review the intro deliberately. Run `node tests/splash.test.cjs` to check the intro lifecycle and failure fallbacks.
